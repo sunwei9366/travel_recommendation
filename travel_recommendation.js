@@ -26,6 +26,12 @@ function getDestinations(recommendations) {
   const destinations = [];
 
   for (const country of recommendations.countries ?? []) {
+    destinations.push({
+      ...country,
+      category: "Country",
+      searchText: country.name,
+    });
+
     for (const city of country.cities ?? []) {
       destinations.push({
         ...city,
@@ -60,6 +66,15 @@ function showResults(destinations) {
       image.loading = "lazy";
       image.addEventListener("error", () => image.remove());
       article.append(image);
+
+      if (destination.imageCredit && destination.imageCreditUrl) {
+        const credit = document.createElement("a");
+        credit.href = destination.imageCreditUrl;
+        credit.target = "_blank";
+        credit.rel = "noopener noreferrer";
+        credit.textContent = destination.imageCredit;
+        article.append(credit);
+      }
     }
 
     const heading = document.createElement("h2");
@@ -74,6 +89,12 @@ function showResults(destinations) {
     article.append(heading, category, description);
     searchResults.append(article);
   }
+}
+
+function normalizeSearchTerm(text) {
+  return text
+    .replace(/\bbeaches\b/g, "beach")
+    .replace(/\bcountries\b/g, "country");
 }
 
 searchForm.addEventListener("submit", async (event) => {
@@ -92,10 +113,10 @@ searchForm.addEventListener("submit", async (event) => {
 
   try {
     const recommendations = await getRecommendations();
+    const normalizedQuery = normalizeSearchTerm(query);
     const matches = getDestinations(recommendations).filter((destination) => {
       const searchableText = `${destination.searchText ?? `${destination.name} ${destination.description}`} ${destination.category}`;
-      const normalizedQuery = query.replace(/\bbeaches\b/g, "beach");
-      const normalizedText = searchableText.toLocaleLowerCase().replace(/\bbeaches\b/g, "beach");
+      const normalizedText = normalizeSearchTerm(searchableText.toLocaleLowerCase());
       return normalizedText.includes(normalizedQuery);
     });
 

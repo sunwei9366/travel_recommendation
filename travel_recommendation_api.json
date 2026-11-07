@@ -3,6 +3,10 @@
       {
         "id": 1,
         "name": "Australia",
+        "description": "Discover Australia's iconic coastlines, lively cities, and unique wildlife.",
+        "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/40/Sydney_Opera_House_Sails.jpg/960px-Sydney_Opera_House_Sails.jpg",
+        "imageCredit": "Photo by Roybb95~commonswiki, CC BY-SA 3.0",
+        "imageCreditUrl": "https://commons.wikimedia.org/wiki/File:Sydney_Opera_House_Sails.jpg",
         "cities": [
           {
             "name": "Sydney, Australia",
@@ -19,6 +23,10 @@
       {
         "id": 2,
         "name": "Japan",
+        "description": "Explore Japan's blend of historic traditions, mountain scenery, and modern cities.",
+        "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/04/Japan_Mt_Fuji_%2814298594376%29.jpg/960px-Japan_Mt_Fuji_%2814298594376%29.jpg",
+        "imageCredit": "Photo by Yiannis Theologos Michellis, CC0",
+        "imageCreditUrl": "https://commons.wikimedia.org/wiki/File:Japan_Mt_Fuji_(14298594376).jpg",
         "cities": [
           {
             "name": "Tokyo, Japan",
@@ -35,6 +43,10 @@
       {
         "id": 3,
         "name": "Brazil",
+        "description": "Experience Brazil's vibrant culture, natural beauty, and energetic coastal cities.",
+        "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/30/Rio_skyline_and_Cristo_Redentor_from_Sugarloaf_Mountain%2C_Brazil.jpg/960px-Rio_skyline_and_Cristo_Redentor_from_Sugarloaf_Mountain%2C_Brazil.jpg",
+        "imageCredit": "Photo by Wilfredor, CC0",
+        "imageCreditUrl": "https://commons.wikimedia.org/wiki/File:Rio_skyline_and_Cristo_Redentor_from_Sugarloaf_Mountain,_Brazil.jpg",
         "cities": [
           {
             "name": "Rio de Janeiro, Brazil",
@@ -53,13 +65,17 @@
       {
         "id": 1,
         "name": "Angkor Wat, Cambodia",
-        "imageUrl": "enter_your_image_for_angkor-wat.jpg",
+        "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0e/20171128_Angkor_Wat_5765_DxO.jpg/960px-20171128_Angkor_Wat_5765_DxO.jpg",
+        "imageCredit": "Photo by Jakub Hałun, CC BY-SA 4.0",
+        "imageCreditUrl": "https://commons.wikimedia.org/wiki/File:20171128_Angkor_Wat_5765_DxO.jpg",
         "description": "A UNESCO World Heritage site and the largest religious monument in the world."
       },
       {
         "id": 2,
         "name": "Taj Mahal, India",
-        "imageUrl": "enter_your_image_for_taj-mahal.jpg",
+        "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/74/Taj_Mahal%2C_Agra%2C_India_edit2.jpg/960px-Taj_Mahal%2C_Agra%2C_India_edit2.jpg",
+        "imageCredit": "Photo by Yann Forget, edited by King of Hearts, CC BY-SA 4.0",
+        "imageCreditUrl": "https://commons.wikimedia.org/wiki/File:Taj_Mahal,_Agra,_India_edit2.jpg",
         "description": "An iconic symbol of love and a masterpiece of Mughal architecture."
       }
     ],
