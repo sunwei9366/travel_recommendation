@@ -53,6 +53,15 @@ function showResults(destinations) {
     const article = document.createElement("article");
     article.className = "search-result";
 
+    if (destination.imageUrl && !destination.imageUrl.startsWith("enter_your_image")) {
+      const image = document.createElement("img");
+      image.src = destination.imageUrl;
+      image.alt = `View of ${destination.name}`;
+      image.loading = "lazy";
+      image.addEventListener("error", () => image.remove());
+      article.append(image);
+    }
+
     const heading = document.createElement("h2");
     heading.textContent = destination.name;
 
@@ -85,7 +94,9 @@ searchForm.addEventListener("submit", async (event) => {
     const recommendations = await getRecommendations();
     const matches = getDestinations(recommendations).filter((destination) => {
       const searchableText = `${destination.searchText ?? `${destination.name} ${destination.description}`} ${destination.category}`;
-      return searchableText.toLocaleLowerCase().includes(query);
+      const normalizedQuery = query.replace(/\bbeaches\b/g, "beach");
+      const normalizedText = searchableText.toLocaleLowerCase().replace(/\bbeaches\b/g, "beach");
+      return normalizedText.includes(normalizedQuery);
     });
 
     showResults(matches);
